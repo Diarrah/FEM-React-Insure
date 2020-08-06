@@ -1,0 +1,31 @@
+.different__section {
+    margin: 250px 8vw 0;
+
+    &__line {
+        width: 12%;
+        margin-bottom: 30px;
+    }
+
+    &__heading {
+        font-size: calc(2.3em + 1.25vw);
+    }
+
+    &__card__container {
+        @include flex-btwn();
+        margin-top: 65px;
+    }
+}
+
+.different__attribute__card {
+    width: calc(92% / 3);
+
+    &__heading {
+        margin: 20px 0;
+        font-size: calc(1.25em + .35vw);
+    }
+
+    &__subheading {
+        color: $dark-grayish-violet;
+        line-height: 1.5;
+    }
+}

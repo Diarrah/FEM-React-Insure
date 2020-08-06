@@ -1,0 +1,25 @@
+.cta {
+    @include display-position-align(flex, relative, center);
+    justify-content: space-between;
+    margin: 150px 8vw;
+    padding: 60px 40px;
+    background-color: $dark-violet;
+    color: $light-gray;
+
+    &__heading {
+        position: relative;
+        max-width: 60%;
+        font-size: calc(2.3em + 1vw);
+        line-height: 1;
+        z-index: 5;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0; bottom: 0; left: 0; right: 0;
+        background-image: url(../images/bg-pattern-how-we-work-desktop.svg);
+        background-position: right center;
+        background-repeat: no-repeat;
+    }
+}

@@ -1,0 +1,47 @@
+.navbar {
+    @include display-position-align(flex, relative, center);
+    justify-content: space-between;
+    padding: 20px 8vw;
+    background-color: #fff;
+    z-index: 5;
+
+
+    &__links {
+        @include flex-btwn();
+        width: 300px;
+        margin: 0 35px 0 auto;
+        color: $dark-grayish-violet;
+
+        li a {
+            position: relative;
+            font-size: 15px;
+
+            &:hover { 
+                color: #2C2830;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    background: #2C2830;
+                    left: 20%;
+                    bottom: -1px;
+                    height: 1px; width: 60%;
+                }
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                left: 50%;
+                width: 0;
+                transition: 0.15s;
+            }
+        }
+    }
+
+    &--mobile {
+        display: none;
+
+        .close { display: none }
+    }
+}

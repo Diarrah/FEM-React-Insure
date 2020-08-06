@@ -1,0 +1,39 @@
+.btn {
+    cursor: pointer;
+    position: relative;
+    font-family: inherit;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border: 2px solid;
+    background-color: transparent;
+    height: 40px; min-width: 125px;
+    padding: 0 10px;
+    transition: .2s;
+    z-index: 5;
+
+    &:active {
+        transform: scale(0.98);
+    }
+
+    &--black {
+        border-color: #2C2830;
+        font-weight: 700;
+
+        &:hover {
+            background-color: #2C2830;
+            border-color: #2C2830;
+            color: $light-gray;
+        }
+    }
+
+    &--gray {
+        color: $light-gray;
+        border-color: $light-gray;
+
+        &:hover {
+            background-color: $light-gray;
+            color: $dark-violet;
+            font-weight: 700;
+        }
+    }
+}
