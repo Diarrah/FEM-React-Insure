@@ -13,11 +13,11 @@ const Navbar = () => {
             <ul className="navbar__links">
                 {navbarLinks.map((link, i) => (
                     <li className="navbar__link" key={`navbar-link-${i}`}>
-                        { link }
+                        <a href="#">{ link }</a>
                     </li>
                 ))}
             </ul>
-            <button className="btn btn--header">View Plans</button>
+            <button className="btn btn--black">View Plans</button>
             <a href="#" className="navbar--mobile">
                 <img className="hamburger hamburger--deploy" src={hamburger} alt="Mobile menu deployment" />
                 <img className="close close--undeploy" src={close} alt="X shape for menu undeployment" />

@@ -24,43 +24,45 @@ const Footer = () => {
                 </div>
             </div>
 
+            <hr className="footer__line" />
+
             <div className="footer__links__container">
                 <div className="footer__links__list">
-                    <h5 className="footer__links__list">Our company</h5>
+                    <h5 className="footer__links__heading">Our company</h5>
                     <ul className="footer__links footer__links--company">
                         {footerLinks.slice(0, 4).map((link, i) => (
                             <li className="footer__link" key={i}>
-                                {link}
+                               <a href="#">{ link }</a>
                             </li>
                         ))}
                     </ul>
                 </div>
                 <div className="footer__links__list">
-                    <h5 className="footer__links__list">Help Me</h5>
+                    <h5 className="footer__links__heading">Help Me</h5>
                     <ul className="footer__links footer__links--help">
                         {footerLinks.slice(4, 8).map((link, i) => (
                             <li className="footer__link" key={i}>
-                                {link}
+                                <a href="#">{ link }</a>
                             </li>
                         ))}
                     </ul>
                 </div>
                 <div className="footer__links__list">
-                    <h5 className="footer__links__list">Contact</h5>
+                    <h5 className="footer__links__heading">Contact</h5>
                     <ul className="footer__links footer__links--contact">
                         {footerLinks.slice(8, 11).map((link, i) => (
                             <li className="footer__link" key={i}>
-                                {link}
+                                <a href="#">{ link }</a>
                             </li>
                         ))}
                     </ul>
                 </div>
                 <div className="footer__links__list">
-                    <h5 className="footer__links__list">Others</h5>
+                    <h5 className="footer__links__heading">Others</h5>
                     <ul className="footer__links footer__links--others">
                         {footerLinks.slice(11, footerLinks.length).map((link, i) => (
                             <li className="footer__link" key={i}>
-                                {link}
+                                <a href="#">{ link }</a>
                             </li>
                         ))}
                     </ul>
