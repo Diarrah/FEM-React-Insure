@@ -1,0 +1,25 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+    &:focus {
+        outline: 0;
+    }
+}
+
+body {
+    position: relative;
+    margin: 0 auto;
+    max-width: 1900px;
+    overflow-x: hidden;
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 22%; bottom: 0; left: 0; right: 0;
+        background-image: url(../images/bg-pattern-intro-left-desktop.svg);
+        background-repeat: no-repeat;
+        background-position: top left;
+    }
+}
