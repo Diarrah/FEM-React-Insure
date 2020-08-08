@@ -12,6 +12,7 @@ const Different = () => {
 
     return (
         <div className="different__section">
+            <hr className="different__section__line" />
             <h2 className="different__section__heading">We're different</h2>
             <div className="different__section__card__container">
                 <DifferentAttribute 
