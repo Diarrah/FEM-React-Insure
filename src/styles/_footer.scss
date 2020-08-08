@@ -21,6 +21,8 @@
             width: 150px;
 
             a {
+                display: flex; 
+                align-items: center;
                 &:nth-child(1) i:hover { color: #3b5998 }
                 &:nth-child(2) i:hover { color: #00acee }
                 &:nth-child(3) i:hover { color: #E60023 }
@@ -35,6 +37,15 @@
                     color: $dark-grayish-violet;
                     font-size: 20px;
                     transition: .3s;
+                    padding: 4px;
+                    border: 0.5px solid transparent;
+                    border-radius: 40%;
+
+                    &:hover {
+                        border-color: $dark-gray;
+                        border-radius: 5px;
+                        box-shadow: 0px 2px 5px rgba($dark-gray, 0.25);
+                    }
                 }
             }
         }
@@ -53,7 +64,6 @@
             .footer__links__heading {
                 color: $dark-grayish-violet;
                 margin-bottom: 25px;
-                
             }
 
             .footer__links {
@@ -62,7 +72,7 @@
 
                     a {
                         position: relative;
-                        color: #2C2830;
+                        color: $dark-gray;
                         font-weight: 700;
 
                         &::after {
@@ -84,6 +94,53 @@
                     }
                 }
             }
+        }
+    }
+
+    @include rwd(890) {
+        padding: 70px 8vw 20px;
+
+        &__header {
+            padding: 0 8vw;
+        }
+
+        &__links__container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            grid-row-gap: 40px;
+            text-align: center;
+
+            .footer__links__heading {
+                margin-bottom: 20px !important;
+            }
+        }
+    }
+
+    @include rwd(450) {
+        &__header {
+            flex-direction: column;
+
+            .footer__social__logos {
+                margin-top: 25px;
+            }
+        }
+
+        &__links__container {
+            .footer__links__list {
+                .footer__links__heading {
+                    margin-bottom: 14px !important;
+                }
+
+                .footer__link {
+                    margin-bottom: 10px !important;
+
+                    a {
+                        font-weight: normal !important;
+                        font-size: 14px;
+                    }
+                }
+            }    
         }
     }
 }
