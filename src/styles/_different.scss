@@ -7,12 +7,36 @@
     }
 
     &__heading {
+        position: relative;
         font-size: calc(2.3em + 1.25vw);
+        z-index: 1;
     }
 
     &__card__container {
         @include flex-btwn();
         margin-top: 65px;
+    }
+
+    @include tablet-breakpoint {
+        margin: 117px 8vw 0;
+
+        &__card__container {
+            flex-direction: column;
+        }
+    }
+
+    @include rwd(500) {
+        text-align: center;
+        margin-top: 100px;
+
+        &__line {
+            width: 40%;
+            margin: 0 auto 40px;
+        }
+
+        &__heading {
+            font-size: calc(2em + 1.8vw);
+        }
     }
 }
 
@@ -27,5 +51,27 @@
     &__subheading {
         color: $dark-grayish-violet;
         line-height: 1.5;
+    }
+
+    @include tablet-breakpoint {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 40px;
+
+        &:nth-of-type(3) { margin-bottom: 0 }
+
+        &__textbox {
+            margin-left: 40px;
+        }
+    }
+
+    @include rwd(500) {
+        flex-direction: column;
+        margin-bottom: 60px;
+
+        &__textbox {
+            margin-left: 0;
+        }
     }
 }

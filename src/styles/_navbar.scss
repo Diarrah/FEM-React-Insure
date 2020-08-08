@@ -1,28 +1,28 @@
 .navbar {
     @include display-position-align(flex, relative, center);
     justify-content: space-between;
-    padding: 20px 8vw;
     background-color: #fff;
+    padding: 20px 8vw;
+    font-size: 15px;
     z-index: 5;
 
-
     &__links {
-        @include flex-btwn();
-        width: 300px;
+        @include display-position-align(flex, relative, center);
+        justify-content: space-between;
+        width: 400px;
         margin: 0 35px 0 auto;
-        color: $dark-grayish-violet;
 
-        li a {
+        li a:not(.btn--black) {
             position: relative;
-            font-size: 15px;
+            color: $dark-grayish-violet;
 
             &:hover { 
-                color: #2C2830;
+                color: $dark-gray;
 
                 &::after {
                     content: '';
                     position: absolute;
-                    background: #2C2830;
+                    background: $dark-gray;
                     left: 20%;
                     bottom: -1px;
                     height: 1px; width: 60%;
@@ -43,5 +43,75 @@
         display: none;
 
         .close { display: none }
+    }
+
+    @include rwd(710) {
+        font-size: 18px;
+        letter-spacing: 1px;
+
+        &__links {
+            @include display-position-align(flex, absolute, center);
+            flex-direction: column;
+            background-color: $dark-violet;
+            width: 100%; height: calc(100vh - 72px);
+            top: 72px; left: 0;
+            margin-right: 0;
+            padding: 60px 5vw 30vh;  
+            transform: translateX(105%);    
+            transition: 600ms;  
+
+            li {
+                width: 100%;
+                text-align: center;
+
+                a {
+                    color: $light-gray !important;
+
+                    &:not(.btn--black):hover::after {
+                        background: $light-gray;
+                        bottom: -3px;
+                    }
+                }
+            }  
+            
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: 0; left: 0; right: 0;
+                background-image: url(../images/bg-pattern-mobile-nav.svg);
+                background-repeat: no-repeat;
+                background-size: cover;
+                height: 40%; width: 100%;
+            }
+
+            &.mobile__menu__deployed {
+                transform: translateX(0);
+            }
+        }
+
+        &--mobile {
+            display: flex;
+            align-items: center;
+            
+            &.change__icon {
+                border: 1.5px solid $dark-gray;
+                height: 32px; width: 32px;
+
+                .hamburger { display: none }
+                .close { 
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    height: 100%; width: 100%;
+                    padding-left: 1px;
+                    font-size: 12px;
+
+                    &.spin {
+                        transform: rotateZ(360deg);
+                        transition: transform 450ms;
+                    }
+                }
+            }
+        }
     }
 }
