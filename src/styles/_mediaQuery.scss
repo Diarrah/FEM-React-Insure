@@ -1,5 +1,13 @@
+$bp--tablets: 885px;
+
 @mixin rwd($screen) {
     @media (max-width: $screen+'px') {
         @content;
     }
 }
+
+@mixin tablet-breakpoint {
+    @media (max-width: #{$bp--tablets}) {
+        @content;
+    }
+ }
